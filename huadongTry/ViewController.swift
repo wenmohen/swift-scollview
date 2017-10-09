@@ -7,17 +7,14 @@
 //
 
 import UIKit
-//获取屏幕的高
-let IPhone_SCREEN_HEIGHT = UIScreen.main.bounds.height
-//获取屏幕宽
-let IPhone_SCREEN_WIDTH = UIScreen.main.bounds.width
+
 class ViewController: UIViewController,UIScrollViewDelegate{
     let menuPageControl = UIPageControl()//小圆点
     let menuScrollView = UIScrollView()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        _initMenuView()
+//        _initMenuView()
     }
 
     func _initMenuView(){
