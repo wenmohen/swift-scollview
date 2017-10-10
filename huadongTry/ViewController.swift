@@ -22,15 +22,15 @@ class ViewController: UIViewController,UIScrollViewDelegate{
         let colorArr:NSArray = [UIColor.yellow,UIColor.orange,UIColor.gray,UIColor.green,UIColor.purple,UIColor.brown,UIColor.blue,UIColor.lightGray,UIColor.darkGray,UIColor.red,UIColor.cyan,UIColor.magenta]
         let dataArr:NSArray = ["美食","外卖","跑腿","果蔬","冷饮","面食","火锅","炸鸡","晚餐","午餐","早餐","茶饮","下午茶","冷食","热饮","鱼类","粉类","包子","零食","旅行","购票","住宿","飞机票","超市","宵夜","小吃","瓜果","购票","住宿","飞机票","超市","宵夜","小吃","瓜果"]
 
-//        let dataArr:NSArray = ["","","",""]
+//        let dataArr:NSArray = ["美食","外卖","跑腿","果蔬"]
 
         let bgView = UIView(frame:CGRect(x:0,y:100,width:IPhone_SCREEN_WIDTH,height:180))
         self.view.addSubview(bgView)
         
         bgView.frame = dataArr.count > 4 ? CGRect(x:0,y:100,width:IPhone_SCREEN_WIDTH,height:180):CGRect(x:0,y:100,width:IPhone_SCREEN_WIDTH,height:100)
         
-        menuScrollView.frame = CGRect(x:0,y:0,width:IPhone_SCREEN_WIDTH,height:bgView.frame.height)
-        menuScrollView.backgroundColor=UIColor.lightText
+         menuScrollView.frame = CGRect(x:0,y:0,width:IPhone_SCREEN_WIDTH,height:bgView.frame.height)
+         menuScrollView.backgroundColor=UIColor.lightText
          menuScrollView.showsHorizontalScrollIndicator=false
         
          menuScrollView.isPagingEnabled = true
