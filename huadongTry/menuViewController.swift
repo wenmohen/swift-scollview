@@ -87,7 +87,6 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             return cell
         }else {
         let cell:MenuListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MenuListTableViewCellID") as! MenuListTableViewCell
-            
         return cell
         }
     }
@@ -119,12 +118,14 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableViewTopConstraint.constant = 0
         }else{
             //        适配iPhone X
-            tableViewTopConstraint.constant = CGFloat(IPhone_StatusBarHeight)
+            tableViewTopConstraint.constant = CGFloat(IPhone_StatusBarHeight)-20
         }
         
         menuTableView.delegate=self
         
         menuTableView.dataSource=self
+        
+        //menuTableView的类型是Plain的时候sectionHeaderView可以正常悬浮，menuTableView的类型是Group的时候sectionHeaderView不悬浮
         
     }
     
