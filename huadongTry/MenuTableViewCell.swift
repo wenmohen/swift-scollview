@@ -42,7 +42,7 @@ class MenuTableViewCell: UITableViewCell,UIScrollViewDelegate {
         let bgView = UIView(frame:CGRect(x:0,y:0,width:IPhone_SCREEN_WIDTH,height:self.frame.height))
         self.addSubview(bgView)
         
-        menuScrollView.frame = CGRect(x:0,y:0,width:IPhone_SCREEN_WIDTH,height:bgView.frame.height)
+        menuScrollView.frame = CGRect(x:0,y:0,width:IPhone_SCREEN_WIDTH,height:bgView.frame.height-20)
         menuScrollView.backgroundColor=UIColor.lightText
         menuScrollView.showsHorizontalScrollIndicator=false
         menuScrollView.isPagingEnabled = true
