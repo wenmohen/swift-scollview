@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C12E31CC1F8BD3560064F97D /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12E31CB1F8BD3560064F97D /* MenuTableViewCell.swift */; };
+		C12E31CE1F8BD4190064F97D /* menuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12E31CD1F8BD4190064F97D /* menuViewController.swift */; };
+		C12E31D01F8BD4E80064F97D /* MenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12E31CF1F8BD4E80064F97D /* MenuHeader.swift */; };
 		C13106E71F8B6C9700B36854 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13106E61F8B6C9700B36854 /* AppDelegate.swift */; };
 		C13106E91F8B6C9700B36854 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13106E81F8B6C9700B36854 /* ViewController.swift */; };
 		C13106EC1F8B6C9700B36854 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13106EA1F8B6C9700B36854 /* Main.storyboard */; };
@@ -14,6 +17,7 @@
 		C13106F11F8B6C9700B36854 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13106EF1F8B6C9700B36854 /* LaunchScreen.storyboard */; };
 		C13106FC1F8B6C9700B36854 /* huadongTryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13106FB1F8B6C9700B36854 /* huadongTryTests.swift */; };
 		C13107071F8B6C9700B36854 /* huadongTryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13107061F8B6C9700B36854 /* huadongTryUITests.swift */; };
+		C17867C21F8C5FAF003ECFB4 /* MenuListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17867C11F8C5FAF003ECFB4 /* MenuListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C12E31CB1F8BD3560064F97D /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		C12E31CD1F8BD4190064F97D /* menuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuViewController.swift; sourceTree = "<group>"; };
+		C12E31CF1F8BD4E80064F97D /* MenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuHeader.swift; sourceTree = "<group>"; };
 		C13106E31F8B6C9700B36854 /* huadongTry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = huadongTry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13106E61F8B6C9700B36854 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C13106E81F8B6C9700B36854 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,7 @@
 		C13107021F8B6C9700B36854 /* huadongTryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = huadongTryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13107061F8B6C9700B36854 /* huadongTryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = huadongTryUITests.swift; sourceTree = "<group>"; };
 		C13107081F8B6C9700B36854 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C17867C11F8C5FAF003ECFB4 /* MenuListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,10 @@
 			children = (
 				C13106E61F8B6C9700B36854 /* AppDelegate.swift */,
 				C13106E81F8B6C9700B36854 /* ViewController.swift */,
+				C12E31CD1F8BD4190064F97D /* menuViewController.swift */,
+				C12E31CB1F8BD3560064F97D /* MenuTableViewCell.swift */,
+				C17867C11F8C5FAF003ECFB4 /* MenuListTableViewCell.swift */,
+				C12E31CF1F8BD4E80064F97D /* MenuHeader.swift */,
 				C13106EA1F8B6C9700B36854 /* Main.storyboard */,
 				C13106ED1F8B6C9700B36854 /* Assets.xcassets */,
 				C13106EF1F8B6C9700B36854 /* LaunchScreen.storyboard */,
@@ -259,8 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C17867C21F8C5FAF003ECFB4 /* MenuListTableViewCell.swift in Sources */,
 				C13106E91F8B6C9700B36854 /* ViewController.swift in Sources */,
 				C13106E71F8B6C9700B36854 /* AppDelegate.swift in Sources */,
+				C12E31CC1F8BD3560064F97D /* MenuTableViewCell.swift in Sources */,
+				C12E31D01F8BD4E80064F97D /* MenuHeader.swift in Sources */,
+				C12E31CE1F8BD4190064F97D /* menuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

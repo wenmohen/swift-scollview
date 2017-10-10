@@ -10,7 +10,12 @@ import UIKit
 
 class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section < 2  {
+            return 1
+        }else{
+            return 10
+        }
+       
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -19,24 +24,49 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10
+            return 1
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        if section == 2 {
+        return 50
+        }else
+        {
+            return 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let menuSectionHeaderView = UIView()
+        if section == 2 {
+        menuSectionHeaderView.frame = CGRect(x:0,y:0,width:IPhone_SCREEN_WIDTH,height:50)
+        menuSectionHeaderView.backgroundColor=UIColor.white
+        let titleArr:NSArray = ["综合排序","销量最高","距离最近","筛选"]
+            let num = CGFloat(titleArr.count)
+        for i in 0...titleArr.count-1 {
+            let button = UIButton()
+            button.frame = CGRect(x:CGFloat(i)*CGFloat(menuSectionHeaderView.frame.width/num),y:0,width:menuSectionHeaderView.frame.width/num,height:menuSectionHeaderView.frame.height)
+            button.setTitleColor(UIColor.black, for: UIControlState.normal)
+            button.titleLabel?.font=UIFont.systemFont(ofSize: 14)
+            button.setTitle(titleArr[i] as? String, for: UIControlState.normal)
+            menuSectionHeaderView.addSubview(button)
+        }
+      }
+        return menuSectionHeaderView
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         var cellHeight:CGFloat = 44.00
         if indexPath.section == 0 {
-            cellHeight = 150
+            cellHeight = 160
         }
        else if indexPath.section == 1 {
            cellHeight = dataArr.count > 4 ? 180.00:100.00
         }else
         {
-          cellHeight = 100
+          cellHeight = 120
         }
         
         return cellHeight
@@ -56,13 +86,22 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.selectionStyle=UITableViewCellSelectionStyle.none
             return cell
         }else {
-        let cell:UITableViewCell = UITableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: nil)
-       cell.backgroundColor=UIColor.yellow
+        let cell:MenuListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MenuListTableViewCellID") as! MenuListTableViewCell
+            
         return cell
         }
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @IBOutlet weak var menuTableView: UITableView!
+    
+    @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     var colorArr = NSArray()
     var dataArr = NSArray()
     override func viewDidLoad() {
@@ -76,6 +115,12 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func _initTableView(){
+        if (self.navigationController != nil) {
+        tableViewTopConstraint.constant = 0
+        }else{
+            //        适配iPhone X
+            tableViewTopConstraint.constant = CGFloat(IPhone_StatusBarHeight)
+        }
         
         menuTableView.delegate=self
         
@@ -84,8 +129,7 @@ class menuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func _loadData(){
-    colorArr = [UIColor.yellow,UIColor.orange,UIColor.gray,UIColor.green,UIColor.purple,UIColor.brown,UIColor.blue,UIColor.lightGray,UIColor.darkGray,UIColor.red,UIColor.cyan,UIColor.magenta]
-//     dataArr = ["美食","外卖","跑腿","果蔬","冷饮","面食","火锅","炸鸡","晚餐","午餐","早餐","茶饮","下午茶","冷食","热饮","鱼类","粉类","包子","零食","旅行","购票","住宿","飞机票","超市","宵夜","小吃","瓜果","购票","住宿","飞机票","超市","宵夜","小吃","瓜果"]
+        colorArr = [UIColor.yellow,UIColor.orange,UIColor.gray,UIColor.green,UIColor.purple,UIColor.brown,UIColor.blue,UIColor.lightGray,UIColor.darkGray,UIColor.red,UIColor.cyan,UIColor.magenta]
         dataArr = ["美食","外卖","跑腿","果蔬","冷饮","面食","火锅","炸鸡","晚餐","午餐","早餐","茶饮","下午茶","冷食","热饮","鱼类","粉类","包子","零食","旅行","购票","住宿","飞机票","超市","宵夜","小吃","瓜果","购票","住宿","飞机票","超市","宵夜","小吃","瓜果"]
 
     }

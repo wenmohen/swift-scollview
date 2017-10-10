@@ -13,6 +13,7 @@ class ViewController: UIViewController,UIScrollViewDelegate{
     let menuScrollView = UIScrollView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.backgroundColor=UIColor.blue
         // Do any additional setup after loading the view, typically from a nib.
 //        _initMenuView()
     }
